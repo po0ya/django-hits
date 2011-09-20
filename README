@@ -15,16 +15,21 @@ TEMPLATE_CONTEXT_PROCESSORS =(
 "django.contrib.messages.context_processors.messages"
 )
 
-Extract .tar.gz file as django-hits directory in your project root directory
+Extract .tar.gz file as djangohits directory in your project root directory
 and do the following:
 
 INSTALLED_APPS = (
   ...
-  django-hits,
+  djangohits,
   ...
   )
 
 now ./manage.py syncdb (or use migration) to create database table and make the app working.
+you can use customized admin for better exprience:
+add the following to admin.py of your app:
+
+from djangohits.admin_view import VisitorAdmin 
+admin.site.register(Visitor,VisitorAdmin)
 
 
 How to use it?
